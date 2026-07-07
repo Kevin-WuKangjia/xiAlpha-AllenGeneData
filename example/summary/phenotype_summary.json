@@ -1,0 +1,14 @@
+﻿{
+  "module": "phenotype",
+  "feature": "Alpha_estimate_Power",
+  "input_left_gii": "<PIPELINE_ROOT>/example/zig_cm/Alpha_estimate_Power/Alpha_estimate_Power_cm_beta2_raw_hemi-L.shape.gii",
+  "input_right_gii": "<PIPELINE_ROOT>/example/zig_cm/Alpha_estimate_Power/Alpha_estimate_Power_cm_beta2_raw_hemi-R.shape.gii",
+  "parcel_count": 100,
+  "left_roi_count": 50,
+  "outputs": {
+    "bilateral_csv": "<PIPELINE_ROOT>/example/phenotype/cm_beta2_bilateral.csv",
+    "bilateral_npy": "<PIPELINE_ROOT>/example/phenotype/cm_beta2_bilateral.npy",
+    "left_csv": "<PIPELINE_ROOT>/example/phenotype/cm_beta2_left.csv",
+    "left_npy": "<PIPELINE_ROOT>/example/phenotype/cm_beta2_left.npy"
+  }
+}

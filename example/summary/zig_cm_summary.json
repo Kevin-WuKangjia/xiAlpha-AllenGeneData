@@ -1,0 +1,55 @@
+﻿{
+  "module": "zig_cm",
+  "feature": "Alpha_estimate_Power",
+  "short_name": "Aα",
+  "input_vertex_matrix_root": "<TOOLBOX_ROOT>\\data\\vertex_matrices_processed",
+  "output_root": "<PIPELINE_ROOT>\\example\\zig_cm",
+  "model": {
+    "zip": "logit(P(Y == 0)) = gamma0 + gamma1 * z_age",
+    "cm": "Y_nonzero = beta0 + beta1 * z_age + beta2 * z_age^2"
+  },
+  "feature_summary": {
+    "feature": "Alpha_estimate_Power",
+    "short_name": "Aα",
+    "model": {
+      "zip": "logit(P(Y == 0)) = gamma0 + gamma1 * z_age",
+      "cm": "Y_nonzero = beta0 + beta1 * z_age + beta2 * z_age^2",
+      "zero_definition": "abs(Y) <= 1e-08",
+      "direction_maps": "coefficient sign split after p < 0.05 threshold"
+    },
+    "counts": {
+      "zip_gamma1_positive_p005": 1068,
+      "zip_gamma1_negative_p005": 8580,
+      "cm_beta2_positive_p005": 94,
+      "cm_beta2_negative_p005": 8810,
+      "zip_gamma1_positive_q005": 988,
+      "zip_gamma1_negative_q005": 7732,
+      "cm_beta2_positive_q005": 68,
+      "cm_beta2_negative_q005": 7808
+    },
+    "outputs": {
+      "zip_gamma1_raw_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_raw_hemi-L.shape.gii",
+      "zip_gamma1_raw_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_raw_hemi-R.shape.gii",
+      "zip_gamma1_p_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_p_hemi-L.shape.gii",
+      "zip_gamma1_p_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_p_hemi-R.shape.gii",
+      "zip_gamma1_q_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_q_hemi-L.shape.gii",
+      "zip_gamma1_q_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_q_hemi-R.shape.gii",
+      "zip_gamma1_positive_p005_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_positive_p005_hemi-L.shape.gii",
+      "zip_gamma1_positive_p005_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_positive_p005_hemi-R.shape.gii",
+      "zip_gamma1_negative_p005_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_negative_p005_hemi-L.shape.gii",
+      "zip_gamma1_negative_p005_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_zip_gamma1_negative_p005_hemi-R.shape.gii",
+      "cm_beta2_raw_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_raw_hemi-L.shape.gii",
+      "cm_beta2_raw_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_raw_hemi-R.shape.gii",
+      "cm_beta2_p_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_p_hemi-L.shape.gii",
+      "cm_beta2_p_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_p_hemi-R.shape.gii",
+      "cm_beta2_q_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_q_hemi-L.shape.gii",
+      "cm_beta2_q_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_q_hemi-R.shape.gii",
+      "cm_beta2_positive_p005_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_positive_p005_hemi-L.shape.gii",
+      "cm_beta2_positive_p005_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_positive_p005_hemi-R.shape.gii",
+      "cm_beta2_negative_p005_L": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_negative_p005_hemi-L.shape.gii",
+      "cm_beta2_negative_p005_R": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_cm_beta2_negative_p005_hemi-R.shape.gii",
+      "figure": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_ZIG_ZIP_CM_direction_2x4.png",
+      "vertex_statistics_csv": "<PIPELINE_ROOT>\\example\\zig_cm\\Alpha_estimate_Power\\Alpha_estimate_Power_ZIG_vertex_statistics.csv"
+    }
+  }
+}

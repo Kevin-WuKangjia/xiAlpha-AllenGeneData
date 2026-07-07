@@ -1,0 +1,10 @@
+﻿{
+  "n_spins": 5000,
+  "real_pls1_score_cm_beta2_corr": 0.4303696017460471,
+  "spin_p_fixed_pls1_score_corr": 0.003799240151969606,
+  "null_mean": -0.004207201947123421,
+  "null_std": 0.19639130674714111,
+  "null_max": 0.4917930875385193,
+  "test_tail": "one-sided greater-or-equal",
+  "null_distribution_csv": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/spin_null_fixed_pls1_score_corr.csv"
+}

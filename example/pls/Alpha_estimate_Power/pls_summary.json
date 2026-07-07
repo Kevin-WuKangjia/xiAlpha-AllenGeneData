@@ -1,0 +1,15 @@
+﻿{
+  "n_regions": 50,
+  "n_genes": 15745,
+  "n_bootstrap": 1000,
+  "valid_bootstrap_count": 1000,
+  "standardize": "True",
+  "zero_std_gene_count": 0,
+  "phenotype_input_mean": -0.003032271309033794,
+  "phenotype_input_std": 0.014260088420074188,
+  "singular_value": 23.181967067657343,
+  "score_covariance": 23.181967067657343,
+  "explained_covariance_ratio": 1.0,
+  "brain_score_phenotype_corr": 0.4303696017460473,
+  "brain_score_phenotype_r2": 0.1852179941070514
+}

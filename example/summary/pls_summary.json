@@ -1,0 +1,28 @@
+﻿{
+  "module": "pls",
+  "feature": "Alpha_estimate_Power",
+  "short_name": "Aalpha",
+  "ahba_mat": "<PIPELINE_ROOT>/example/data/AHBA/ROIxGene_Schaefer100_INT_zscore.mat",
+  "n_bootstrap": 1000,
+  "n_spins": 5000,
+  "brain_score_cm_beta2_corr": 0.4303696017460471,
+  "spin_p_fixed_pls1_score_corr": 0.003799240151969606,
+  "singular_value": 23.181967067657343,
+  "positive_br_gt3_gene_count": 2645,
+  "negative_br_gt3_gene_count": 1373,
+  "outputs": {
+    "pls_gene_weights": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/gene_weights.csv",
+    "pls_top_genes_by_stability": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/top_genes_by_stability.csv",
+    "pls_brain_scores": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/brain_scores.csv",
+    "pls_pls_summary_csv": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/pls_summary.csv",
+    "pls_pls_summary_json": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/pls_summary.json",
+    "PLS1score": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/PLS1score.csv",
+    "threshold": 3.0,
+    "positive_gene_count": 2645,
+    "negative_gene_count": 1373,
+    "positive_genes": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/genes_bootstrap_ratio_positive_gt3.csv",
+    "negative_genes": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/genes_bootstrap_ratio_negative_gt3.csv",
+    "spin_summary_json": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/spin_test_fixed_pls1_summary.json",
+    "spin_null_fixed_pls1_score_corr": "<PIPELINE_ROOT>/example/pls/Alpha_estimate_Power/spin_null_fixed_pls1_score_corr.csv"
+  }
+}
