@@ -283,6 +283,93 @@ Interpretation:
 - `spin p`: fixed-score spin-test p-value. The real PLS1 score map is fixed, while the bilateral CM beta2 map is spatially rotated to generate the null distribution.
 - Marginal density curves show the distribution of each variable.
 
+## Metascape Enrichment
+
+Gene enrichment is a downstream interpretation step after PLS. It is not used to fit the PLS model or compute the spin-test p-value. In this example, Metascape is used to annotate genes selected from the PLS1 bootstrap-ratio results.
+
+Typical inputs:
+
+```text
+pls/<feature>/genes_bootstrap_ratio_positive_gt3.csv
+pls/<feature>/genes_bootstrap_ratio_negative_gt3.csv
+```
+
+For interpretation, positive and negative PLS1 gene sets should usually be submitted separately because they represent opposite directions on the PLS1 gene-weight axis. The submitted gene list contains the genes passing the stability threshold:
+
+```text
+positive set: bootstrap_ratio > 3
+negative set: bootstrap_ratio < -3
+```
+
+### Metascape Setup
+
+The example enrichment was run through the Metascape web interface:
+
+```text
+https://metascape.org/gp/index.html#/main/step3
+```
+
+The selected enrichment sources were:
+
+```text
+GO Molecular Functions
+GO Biological Processes
+GO Cellular Components
+KEGG Pathway
+```
+
+The setup used:
+
+```text
+background genes = all genes
+minimum overlap = 5
+p-value cutoff = 0.01
+minimum enrichment = 2
+selective GO clustering = enabled
+GPEC gene prioritization = enabled
+```
+
+![Metascape setup](example/enrichment/metascape/metascape_1_setup.png)
+
+This panel documents the enrichment databases and thresholds. Keeping this screenshot is useful because enrichment results depend strongly on the selected ontology sources, background set, and filtering thresholds.
+
+### Enrichment Bar Plot
+
+![Metascape enrichment bar plot](example/enrichment/metascape/metascape_2_enrichment_barplot.png)
+
+The bar plot ranks enriched terms by `-log10(P)`. Larger bars indicate stronger statistical enrichment among the submitted PLS1 genes. In this example, the most enriched terms include metabolic, synaptic, cytoskeletal, intracellular signaling, dendritic, secretion-regulation, and central-nervous-system-development related annotations.
+
+The enrichment test asks whether genes from the submitted PLS1 list are over-represented in a known pathway or ontology term compared with the background gene universe. A simple way to describe the logic is:
+
+```text
+observed overlap = genes in the PLS1 list that also belong to a GO/KEGG term
+expected overlap = overlap expected by chance from the background genes
+```
+
+Metascape reports terms where the observed overlap is larger than expected after its statistical filtering and clustering steps.
+
+### Pathway Network
+
+![Metascape pathway network by term](example/enrichment/metascape/metascape_3_network_by_term.png)
+
+The network view groups enriched terms by similarity. Each node is an enriched term, and edges connect terms sharing many genes. Nodes with the same color belong to the same representative pathway/process cluster. This view helps reduce a long enrichment list into broader biological themes.
+
+In this example, the network suggests that the PLS1 gene set is not dominated by a single isolated annotation. Instead, enriched terms form several related clusters, including synaptic structure, dendrite/cytoskeleton organization, cellular localization, secretion, signaling, and metabolic processes.
+
+### Network Colored by P Value
+
+![Metascape pathway network by p value](example/enrichment/metascape/metascape_4_network_by_pvalue.png)
+
+This is the same enrichment network, but node color represents statistical significance. Darker orange/brown nodes have smaller p-values and therefore stronger enrichment evidence. This figure is useful for showing both the structure of the enrichment network and which clusters carry the strongest statistical signal.
+
+### Suggested Reporting Text
+
+For a manuscript or thesis, this step can be summarized as:
+
+```text
+Genes with stable positive or negative PLS1 contributions were selected using a bootstrap-ratio threshold of |BR| > 3 and submitted separately to Metascape for functional enrichment analysis. Enrichment was tested against all background genes using GO Molecular Function, GO Biological Process, GO Cellular Component, and KEGG Pathway annotations, with minimum overlap = 5, p-value cutoff = 0.01, and minimum enrichment = 2. Enriched terms were visualized as ranked -log10(P) bar plots and as pathway/process networks, where connected nodes indicate gene-overlap similarity among terms.
+```
+
 ## Mathematical Details
 
 This section describes the formulas used by the pipeline in the notation of the current data.
